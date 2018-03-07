@@ -6,5 +6,5 @@ export interface User{
     email:string,
     password?:string,
     avatar:string,
-    type:string
+    type?:string
 }
