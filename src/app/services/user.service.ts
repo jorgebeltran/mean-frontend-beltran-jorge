@@ -36,4 +36,7 @@ export class UserService {
     
 */
   }
+  getUserById(userid:string):Observable<any>{
+    return this.myHttpClient.get(`${userApiUrl}/${userid}`);
+  }
 }

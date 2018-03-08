@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserViewComponent } from './user-view/user-view.component';
 
 
 
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserListComponent,
     UserFormEditComponent,
     UserFormCreateComponent,
-    HomeComponent
+    HomeComponent,
+    UserViewComponent
   ],
   imports: [
     BrowserModule,
