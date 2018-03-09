@@ -39,4 +39,7 @@ export class UserService {
   getUserById(userid:string):Observable<any>{
     return this.myHttpClient.get(`${userApiUrl}/${userid}`);
   }
+  createUser(newuser:User):Observable<any>{
+    return this.myHttpClient.post(userApiUrl,newuser);
+  }
 }

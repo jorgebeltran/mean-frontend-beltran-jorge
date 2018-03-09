@@ -14,7 +14,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserViewComponent } from './user-view/user-view.component';
-
+import{FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +32,9 @@ import { UserViewComponent } from './user-view/user-view.component';
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
 
   ],
   providers: [UserService],

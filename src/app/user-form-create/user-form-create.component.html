@@ -1,3 +1,30 @@
-<p>
-  user-form-create works!
-</p>
+<br>
+<div>
+  <label>Name:</label>
+  <input type="text" [(ngModel)]='userToCreate.name' />
+</div>
+<br>
+<div>
+  <label>LastName:</label>
+  <input type="text" [(ngModel)]='userToCreate.lastname'/>
+</div>
+<br>
+<div>
+  <label>Username:</label>
+  <input type="text" [(ngModel)]='userToCreate.username'/>
+</div>
+<br>
+<div>
+  <label>Password:</label>
+  <input type="password" [(ngModel)]='userToCreate.password'/>
+</div>
+<br>
+<div>
+  <label>E-mail:</label>
+  <input type="email" [(ngModel)]='userToCreate.email' />
+
+</div>
+<br>
+<div class="button">
+  <button (click)="createNewUser()">create user</button>
+</div>
