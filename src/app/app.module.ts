@@ -13,6 +13,9 @@ import { UserService } from './services/user.service';import { UserViewComponent
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInjectorService } from "./services/token-injector.service";
+import { UserFormLoginComponent } from './user-form-login/user-form-login.component';
+import { AuthService } from "./services/auth.service";
+import { UserInformationComponent } from './user-information/user-information.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { TokenInjectorService } from "./services/token-injector.service";
     UserFormEditComponent,
     UserFormCreateComponent,
     HomeComponent,
-    UserViewComponent
+    UserViewComponent,
+    UserFormLoginComponent,
+    UserInformationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,8 @@ import { TokenInjectorService } from "./services/token-injector.service";
            provide: HTTP_INTERCEPTORS,
             useClass: TokenInjectorService,
           multi: true
-  }],
+  },AuthService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
