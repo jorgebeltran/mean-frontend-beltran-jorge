@@ -36,5 +36,19 @@ export class UserListComponent implements OnInit {
   viewUser(userId):void{
     this.router.navigate(['user',userId,'view']);
   }
+  deleteUser(userIdDel: string, userName:string, userLastName:string): void {
+          let confirmar = confirm('esta seguro de eliminar a '+userName+' '+userLastName);
+          if (confirmar)
+          this.userservice.deleteUser(userIdDel)
+            .subscribe(
+              (response) => {
+                location.reload();
+              }, (error) => {
+                console.log('error: ', error);
+              }
+            )
+       	   }
+       	   
+  
 
 }

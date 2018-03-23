@@ -13,7 +13,8 @@ export class AuthService {
   login(credentials): Observable<any> {
     return this.htttpclient.post(`${authApiUrl}/login`, credentials);
   };
-  getMyPersonalInformation(){
-  
-  };
-}
+  getMyPersonalInformation(): Observable<any> {
+       return this.htttpclient.get(`${authApiUrl}/me`);
+	   };
+  }
+

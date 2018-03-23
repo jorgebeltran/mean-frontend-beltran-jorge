@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'umss-user-information',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-information.component.css']
 })
 export class UserInformationComponent implements OnInit {
-
-  constructor() { }
+  myUser: User = {
+        name: '',
+        lastname: '',
+        username: '',
+        email: ''
+      };
+  constructor(private authservice: AuthService) { }
 
   ngOnInit() {
+    this.authservice.getMyPersonalInformation()
+        .subscribe( (response)=>{
+            //console.log('Respuesta: ', response);
+            this.myUser = response.data;
+          },(error)=>{
+           console.log('Error:', error);
+          }
+        );
   }
 
 }

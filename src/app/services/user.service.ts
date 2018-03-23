@@ -15,29 +15,13 @@ export class UserService {
   getUserlist():Observable<any>{
     return this.myHttpClient.get(userApiUrl);
 
-  /*getUserlist():User[]{
-   let userList:User[]=[];
-    userList.push({
-      name: 'Carlos',
-      lastname: 'beltran',
-      username: 'carlos123',
-      email:'carlos@gmail.com',
-      avatar: 'avatarcarolos'
-    });
-    userList.push({
-      name: 'jorge',
-      lastname: 'beltran',
-      username: 'carlos12',
-      email:'cars@gmail.com',
-      avatar: 'avatarcarol'
-    });
-
-      return userList;
-    
-*/
+  
   }
   getUserById(userid:string):Observable<any>{
     return this.myHttpClient.get(`${userApiUrl}/${userid}`);
+  }
+  deleteUser(deletedUserId: string ):Observable<any>{
+       return this.myHttpClient.delete(`${userApiUrl}/${deletedUserId}`);
   }
   createUser(newUser:User):Observable<any>{
     return this.myHttpClient.post(userApiUrl,newUser);
